@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script>
+    function setModelUrl() {
+        var input1 = document.getElementById('rRatio').value;
+        var input2 = document.getElementById('expLvl').value;
+        var input3 = document.getElementById('compSize').value;
+        var input4 = document.getElementById('compLoc').value;
+        var input5 = document.getElementById('empType').value;
+        var input6 = document.getElementById('jobTitle').value;
+        var lnk = document.getElementById('lnk');
+        lnk.href = "http://127.0.0.1:5000/run-model/"+input1+"/"+input2+"/"+input3+"/"+input4+"/"+input5+"/"+input6;
+        window.location = lnk.href;
+    }
+</script>
+
+Input Model Parameters! <a href="" id=lnk></a>
+<br>
+Remote Ratio
+<input type='text' id='rRatio' value='' />
+<br>
+Experience Level (SE,MI,EN,EX)
+<input type='text' id='expLvl' value='' />
+<br>
+Company Size (S,M,L)
+<input type='text' id='compSize' value='' />
+<br>
+Job Title (Most normal name)
+<input type='text' id='jobTitle' value='' />
+<br>
+Company Location (US,FR,JP,etc)
+<input type='text' id='compLoc' value='' />
+<br>
+Employment Type (FT,PT,CT,FL)
+<input type='text' id='empType' value='' />
+<br>
+<input type='button' onclick='setModelUrl()' value='Run Model!' />
